@@ -10,7 +10,6 @@ using namespace std;
 
 class Player
 {
-    public:
     //attributes
     std::string name;
     int health;
@@ -18,24 +17,13 @@ class Player
 
     // methods
     void talk(std::string text_to_say);
-    bool is_dea();
+    bool is_dead();
 };
 
 int main() 
 { 
     Player Minsung;
     Player hero;
-
-    Player players[] {Minsung, hero};
-    cout << Minsung.health << endl;
-    cout << Minsung.xp << endl;
-
-
-
-    vector<Player> player_vec {Minsung};
-    player_vec.push_back(hero);
-
-
 
     Player *enemy = new Player();
     delete enemy;
