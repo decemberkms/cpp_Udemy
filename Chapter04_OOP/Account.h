@@ -10,6 +10,15 @@ private:
     std::string name;
 
 public:
+    Account();
+    Account(std::string name, double balance);
+    Account(std::string name);
+    Account(double balance);
+
+    ~Account(); // it's invoked when a local objects goes out of scope
+    // or when the pointer to an object is deleted.
+
+
     void set_balance(double bal);
     double get_balance();
 
