@@ -6,10 +6,13 @@
 
 class Movies {
 private:
-    std::vector<Movie> collection;
+    std::vector<Movie> *collection;
 public:
 //Constructor
     Movies();
+
+//Destructor
+    ~Movies();
 
 //functions
     void get_collection();

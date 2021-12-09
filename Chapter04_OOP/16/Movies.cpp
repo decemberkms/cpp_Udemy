@@ -2,29 +2,36 @@
 
 
 Movies::Movies(){
+    collection = new std::vector<Movie>;
+};
+
+Movies::~Movies(){
+    delete collection;
 };
 
 void Movies::get_collection(){
     std::cout << "Movie list <" << std::endl;
-    for (auto movie:collection)
+    for (int i = 0; i < (*collection).size(); ++i)
     {
         
-        std::cout << movie.get_title() << " " << std::endl;
+        std::cout << "Title: " << (*collection).at(i).get_title() << " ";
+        std::cout << "Rating: " << (*collection).at(i).get_rating() << " ";
+        std::cout << "Watched: " << (*collection).at(i).get_watched() << " " << std::endl;
     }
     std::cout << ">" << std::endl;
 }
 
 void Movies::add_movie(Movie new_movie){
-    collection.push_back(new_movie);
+    collection->push_back(new_movie);
 }
 
 void Movies::increment_movie_watched(std::string watched_one){
 
-    for (auto &movie:collection)
+    for (int i = 0; i < (*collection).size(); ++i)
     {   
-        if (movie.get_title() == watched_one)
+        if ((*collection).at(i).get_title() == watched_one)
         {
-            movie.increment_watched();
+            (*collection).at(i).increment_watched();
         }
     }
 
