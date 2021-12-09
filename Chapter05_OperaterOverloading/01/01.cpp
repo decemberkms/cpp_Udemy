@@ -26,10 +26,11 @@ int main()
     //     cout << test1[i] << "";
     // cout << endl;
 
-    for (int i = 0; i < strlen(test); ++i)
-        cout << test << endl;
-    cout << endl;
+    for (int i = 0; i < 6; ++i)
+        cout << (int)test[i] << endl;
+    cout << "End here" << endl;
     
+    cout << sizeof(test) / sizeof(test[0]) << endl;
 
     Mystring empty; // no-args constructor
     Mystring larry{"Larry"}; // overloaded constructor
