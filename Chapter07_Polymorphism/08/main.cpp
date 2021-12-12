@@ -70,9 +70,20 @@ public:
 };
 
 
+class Test1{
+    virtual void func1();
+    virtual void func2();
+};
+
+class Test2:public Test1{
+    void func1();
+    void func2();
+};
 
 int main()
 {   
+    std::cout << sizeof(Test1) << std::endl;
+    std::cout << sizeof(Test2) << std::endl;
     // Account a;
     // std::cout << a << std::endl;
     // Checking c;
